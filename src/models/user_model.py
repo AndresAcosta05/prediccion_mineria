@@ -8,7 +8,7 @@ class userModel:
         try:
             with Conecction.getConecction().cursor() as cursor:
                 sql = 'SELECT * FROM users WHERE us_user=%s AND us_password=%s'
-                cursor.execute(sql, (user['user'], user['password']))
+                cursor.execute(sql, (user['usuario'], user['contraseña']))
                 return cursor.fetchone()
         
         except Exception as ex:
