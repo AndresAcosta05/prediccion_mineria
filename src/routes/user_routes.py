@@ -10,7 +10,14 @@ def index_user():
 
 @user.route('/user/login', methods=['POST'])
 @cross_origin()
-def insert_user():
+def login_user():
     if request.method == 'POST':
         response = userController.getUser(user=request.json)
+        return jsonify(response)
+
+@user.route('/user/insert', methods=['POST'])
+@cross_origin()
+def insert_user():
+    if request.method == 'POST':
+        response = userController.cr_insert_user(user=request.json)
         return jsonify(response)
