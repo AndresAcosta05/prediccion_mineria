@@ -8,8 +8,8 @@ prediction = Blueprint('Prediction', __name__)
 def index_prediction():
     return jsonify({'Mensaje': 'Bienvenido a flask prediccion'})
 
-@prediction.route('/prediction/predict')
+@prediction.route('/prediction/predict', methods=['POST'])
 @cross_origin()
 def prediction_predict():
     response = predictionController.cr_prediction_predict(request.json)
-    return jsonify({"response": response})
+    return jsonify(response)

@@ -10,14 +10,14 @@ class predictionModel:
     @classmethod
     def md_prediction_predict(cls, data):
         with open('data.csv', 'r') as file:
-            edad = data["edad"]
-            locacion = data["locacion"]
-            tamaño = data["tamaño"]
-            color = data["color"]
-            temporada = data["temporada"]
-            descuento = data["descuento"]
-            cod_promocion = data["cod_promocion"]
-            compras_previas = data["compras_previas"]
+            edad = int(data["edad"])
+            locacion = int(data["locacion"])
+            tamaño = int(data["tamaño"])
+            color = int(data["color"])
+            temporada = int(data["temporada"])
+            descuento = int(data["descuento"])
+            cod_promocion = int(data["cod_promocion"])
+            compras_previas = int(data["compras_previas"])
             # importamos el archivo para la data
             df = pd.read_csv(file)
             label_encoder_location = LabelEncoder()
